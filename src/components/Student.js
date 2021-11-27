@@ -18,12 +18,14 @@ export default function Student({ femaleStudent, firstName, lastName, house, ini
   
 
     useEffect( function () {
-      if (jabbed > 0 && ! displayHouse) {
+      if (jabbed > 0 && !displayHouse) {
       setTimeout(function () {
+        console.log("HELLO");
         setDisplayHouse(true);
         },  1000);
       }
-  })
+    }, 
+  [jabbed, displayHouse])
  
     return (
       <li className={genderClassName + " " + jabbedClassName}>
