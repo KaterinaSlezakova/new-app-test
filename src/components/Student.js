@@ -15,17 +15,16 @@ export default function Student({ femaleStudent, firstName, lastName, house, ini
     //setJabbed(isJabbed);
     setJabbed(jabbed + 1);
   }
-  
 
-    useEffect( function () {
-      if (jabbed > 0 && !displayHouse) {
-      setTimeout(function () {
-        console.log("HELLO");
-        setDisplayHouse(true);
-        },  1000);
-      }
-    }, 
-  [jabbed, displayHouse])
+    //useEffect( function () {
+      //if (jabbed > 0 && !displayHouse) {
+     // setTimeout(function () {
+      //  console.log("HELLO");
+       // setDisplayHouse(true);
+      //  },  1000);
+     // }
+    //}, 
+  //[jabbed, displayHouse])
  
     return (
       <li className={genderClassName + " " + jabbedClassName}>
@@ -36,7 +35,7 @@ export default function Student({ femaleStudent, firstName, lastName, house, ini
             {firstName} {lastName}
           </div>
         </div>
-        {displayHouse > 0 && <div>{house}</div>}
+        <div>{house}</div>
       </li>
     );
 }
