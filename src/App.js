@@ -1,15 +1,17 @@
 
-import React from 'react';
+import React,{ useState } from 'react';
 import './App.css';
 import Students from "./Students";
 
 
 function App() {
+  const [displayStudents, setDisplayStudents] = useState (false)
 
   return (
     <div className="App">
+      <button onClick={() => setDisplayStudents(!displayStudents)}>display/hide students</button>
       <ul>
-        <Students />
+        {displayStudents ? <Students /> : null}
       </ul>
     </div>
   );
