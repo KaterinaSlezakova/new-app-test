@@ -5,14 +5,17 @@ import Students from "./Students";
 
 
 function App() {
-  const [displayStudents, setDisplayStudents] = useState (false)
+  const [displayStudents, setDisplayStudents] = useState (false);
+
 
   return (
     <div className="App">
-      <button onClick={() => setDisplayStudents(!displayStudents)}>display/hide students</button>
+      <div className = "container">
+      <button onClick={() => setDisplayStudents(!displayStudents)}>👉 Display / Hide students 👈</button>
       <ul>
         {displayStudents ? <Students /> : null}
       </ul>
+      </div>
     </div>
   );
 }

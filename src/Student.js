@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Student.css";
 
 
 export default function Student({ femaleStudent, firstName, lastName, house, initials }) {
@@ -29,7 +30,7 @@ export default function Student({ femaleStudent, firstName, lastName, house, ini
     return (
       <li className={genderClassName + " " + jabbedClassName}>
         <div className="name">
-          {jabbed < 2 && <button onClick={onClickJabbed}>jab</button>}
+          {jabbed < 2 && <button onClick={onClickJabbed} className="Student">💉 jab</button>}
           <div className="initials">{initials}</div>
           <div>
             {firstName} {lastName}
