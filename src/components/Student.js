@@ -12,20 +12,19 @@ export default function Student({ femaleStudent, firstName, lastName, house, ini
 
   function onClickJabbed (event){
     event.preventDefault();
-    //const isJabbed = event.target.checked;
-    //setJabbed(isJabbed);
+    setJabbed(event.target.checked);
     setJabbed(jabbed + 1);
   }
 
-    //useEffect( function () {
-      //if (jabbed > 0 && !displayHouse) {
-     // setTimeout(function () {
-      //  console.log("HELLO");
-       // setDisplayHouse(true);
-      //  },  1000);
-     // }
-    //}, 
-  //[jabbed, displayHouse])
+    useEffect( function () {
+      if (jabbed > 0 && !displayHouse) {
+          setTimeout(function () {
+          console.log("HELLO");
+          setDisplayHouse(true);
+          },  3000);
+      }
+    }, 
+  [jabbed, displayHouse])
  
     return (
       <li className={genderClassName + " " + jabbedClassName}>
@@ -36,7 +35,7 @@ export default function Student({ femaleStudent, firstName, lastName, house, ini
             {firstName} {lastName}
           </div>
         </div>
-        <div>{house}</div>
+        <div>{displayHouse ? house : null}</div>
       </li>
     );
 }

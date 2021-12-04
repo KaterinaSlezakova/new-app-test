@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Loader from "react-loader-spinner";
 import Student from "./Student";
-
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 
 export default function Students() {
 const [students, setStudents] = useState([]);
 const [isLoading, setLoading] = useState (false);
+
 
 useEffect(function (){
   setLoading(true)
@@ -19,14 +17,9 @@ useEffect(function (){
   },[]);
 
   if (isLoading) {
-  return (
-    <Loader
-      type="Puff"
-      color="#b1f4cf"
-      height={200}
-      width={200}
-      timeout={3000} //3 secs
-    />
+    
+    return (
+    <div><font color="white">Loading..</font></div>
   );
   } 
   
@@ -36,6 +29,7 @@ return (
       const femaleStudent = student.gender === "F";
       const initials = `${student.firstName.charAt(0).toUpperCase()}${student.lastName.charAt(0).toUpperCase()}`;
       return (
+        <div>
         <Student
           femaleStudent={femaleStudent}
           firstName={student.firstName.toUpperCase()}
@@ -43,6 +37,7 @@ return (
           house={student.house}
           initials={initials}
         />
+        </div>
       )
     })}
   </ul>
